@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初めての宅配弁当発注で失敗しない10のチェックリスト｜無料ダウンロード</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #1a1a1a;
+      --dark:    #2c2c2c;
+      --red:     #CC0000;
+      --gray-bg: #F5F5F5;
+      --white:   #FFFFFF;
+      --text:    #1a1a1a;
+      --text-sub:#555555;
+      --border:  #E0E0E0;
+    }
+
+    body {
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: relative;
+      color: #fff;
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+    }
+    .header-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .header-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .header-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.50);
+    }
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      padding: 5px 16px;
+      margin-bottom: 28px;
+    }
+    header h1 {
+      font-size: clamp(1.7rem, 4.5vw, 3rem);
+      font-weight: bold;
+      line-height: 1.45;
+      letter-spacing: 0.04em;
+      margin-bottom: 22px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+    header h1 em {
+      font-style: normal;
+      color: #FF4444;
+    }
+    header p.sub {
+      font-size: clamp(0.92rem, 2vw, 1.05rem);
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 36px;
+      line-height: 1.85;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    }
+    .header-cta {
+      display: inline-block;
+      background: #fff;
+      color: var(--black);
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 16px 44px;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      border: 2px solid #fff;
+      transition: background .2s, color .2s;
+    }
+    .header-cta:hover { background: var(--red); color: #fff; border-color: var(--red); }
+
+    @media (max-width: 600px) {
+      header { min-height: 420px; }
+      .header-inner { padding: 60px 20px; }
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 72px 20px; }
+    .container { max-width: 760px; margin: 0 auto; }
+    .section-label {
+      display: block;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: bold;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+      font-weight: bold;
+      color: var(--black);
+      line-height: 1.45;
+      margin-bottom: 36px;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+    h2 .accent { color: var(--red); }
+
+    /* ─── WORRIES ─── */
+    .worries-section { background: var(--gray-bg); }
+    .worries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .worry-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--red);
+      padding: 28px 22px;
+    }
+    .worry-card .q-mark {
+      font-size: 2.2rem;
+      color: var(--red);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 10px;
+      font-family: Georgia, serif;
+      opacity: 0.25;
+    }
+    .worry-card strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+    .worry-card p {
+      font-size: 0.92rem;
+      color: var(--text-sub);
+      line-height: 1.75;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider { display: none; }
+
+    /* ─── BENEFITS ─── */
+    .benefits-section { background: var(--white); }
+    .benefits-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .benefits-list li {
+      background: var(--gray-bg);
+      border-left: 4px solid var(--red);
+      padding: 22px 24px 22px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .benefit-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: var(--black);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-top: 1px;
+    }
+    .benefit-text strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--black);
+      margin-bottom: 5px;
+    }
+    .benefit-text p {
+      font-size: 0.91rem;
+      color: var(--text-sub);
+      line-height: 1.72;
+    }
+
+    /* ─── FORM SECTION ─── */
+    .form-section { background: var(--gray-bg); }
+    .form-section h2 { color: var(--black); }
+    .form-section .section-label { color: var(--red); }
+    .form-section .sub-text {
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--text-sub);
+      margin-top: -22px;
+      margin-bottom: 32px;
+    }
+    form {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 40px 36px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .form-group { margin-bottom: 22px; }
+    label {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 7px;
+      letter-spacing: 0.03em;
+    }
+    label .req {
+      background: var(--red);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: bold;
+      padding: 2px 6px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .2s;
+    }
+    input::placeholder { color: #aaa; }
+    input:focus { border-color: var(--black); }
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--black);
+      color: #fff;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: inherit;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background .2s;
+    }
+    .submit-btn:hover { background: var(--red); }
+    .form-note {
+      text-align: center;
+      font-size: 0.76rem;
+      color: #999;
+      margin-top: 14px;
+      line-height: 1.65;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── ORNAMENT (hidden) ─── */
+    .ornament { display: none; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 480px) {
+      header { padding: 48px 16px 56px; }
+      section { padding: 52px 16px; }
+      form { padding: 28px 18px; }
+      .worry-card { padding: 22px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ====== HEADER ====== -->
+<header>
+  <div class="header-bg">
+    <img src="obento.jpg" alt="宅配弁当のイメージ">
+  </div>
+  <div class="header-inner">
+    <div class="header-badge">無料ホワイトペーパー</div>
+    <h1>
+      初めての宅配弁当発注で<br>
+      <em>失敗しない</em><br>
+      10のチェックリスト
+    </h1>
+    <p class="sub">
+      社内イベントや研修、会議などでお弁当を頼むシーンが出てきた際、<br>
+      何をどう選べばいいのか迷っていませんか？<br>
+      本資料では、初めての発注でも安心できるよう<br>
+      <strong style="color:#fff;">"失敗しないためのポイント"</strong>をまとめました。
+    </p>
+    <a href="#download" class="header-cta">今すぐ無料ダウンロード ▼</a>
+  </div>
+</header>
+
+
+<!-- ====== WORRIES ====== -->
+<section class="worries-section">
+  <div class="container">
+    <p class="section-label" style="display:block;text-align:center;">Pain Points</p>
+    <h2>初めての弁当手配で<span class="accent">起こりがちな失敗とは？</span></h2>
+
+    <div class="worries-grid">
+      <div class="worry-card">
+        <div class="q-mark">"</div>
+        <strong>希望の時間に届かなかった</strong>
+        <p>弁当の到着が早すぎても遅すぎても良くありません。納品時間の「幅」があるのか「厳守」なのかを事前に確認せず、当日トラブルになるケースが多くあります。</p>
+      </div>
+      <div class="worry-card">
+        <div class="q-mark">"</div>
+        <strong>写真と実物が違った</strong>
+        <p>Webやカタログの写真だけで判断すると、思ったよりボリュームが少ない・内容が違うなど、実物のサイズ感や内容が想像と違うことも。大切な場面で失敗したくないですよね。</p>
+      </div>
+      <div class="worry-card">
+        <div class="q-mark">"</div>
+        <strong>発注・キャンセル期限を見落とした</strong>
+        <p>多くの弁当店では、最低注文金額や注文数などの締切ルールが設けられています。注文数が多いと締切が1か月前などと決まっている場合もあり、見落としによる数量ミスが発生します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">― ◆ ―</div>
+
+<!-- ====== BENEFITS ====== -->
+<section class="benefits-section">
+  <div class="container">
+    <p class="section-label" style="display:block;text-align:center;">What You'll Learn</p>
+    <h2>このホワイトペーパーで<span class="accent">わかること</span></h2>
+
+    <ul class="benefits-list">
+      <li>
+        <div class="benefit-num">1</div>
+        <div class="benefit-text">
+          <strong>なぜ"宅配弁当手配"が重要なのか？ その理由がわかる</strong>
+          <p>お弁当の内容や配慮レベルが高いと、「いい会社」「気が利いている」という印象を与えます。逆に不満が出れば、会議やイベントそのものの評価が下がってしまいます。手配の丁寧さはあなたの評価にも直結します。</p>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-num">2</div>
+        <div class="benefit-text">
+          <strong>発注前に必ず確認すべき「10のチェックリスト」</strong>
+          <p>配達可能エリアの確認・納品時間・配達先の詳細情報・発注締切とキャンセル期限・参加者層に応じたメニュー構成・写真と実物のギャップ・箸等付属品・ごみ回収・支払い方法・当日の受け取りと緊急連絡先まで、発注時の抜け漏れをゼロにします。</p>
+        </div>
+      </li>
+      <li>
+        <div class="benefit-num">3</div>
+        <div class="benefit-text">
+          <strong>参加者の満足度を高めるメニュー選定のポイント</strong>
+          <p>参加者の年齢・役職・男女比などによって、好まれるメニューは大きく異なります。受賞歴がある弁当や、お客様から高評価を得ている商品を選ぶコツと、試食サービスを活用して"ボリューム・味・彩り"を事前確認する方法をご紹介します。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ====== FORM ====== -->
+<section class="form-section" id="download">
+  <div class="container">
+    <div class="ornament" style="--border:#7a4040;">
+      <span class="ornament-icon">✦</span>
+    </div>
+    <p class="section-label" style="display:block;text-align:center;">Free Download</p>
+    <h2>無料ダウンロードはこちら</h2>
+    <p class="sub-text">このチェックリストを活用して、発注時の抜け漏れを防ぎ、<br>参加者満足度の高い弁当手配を実現してください。<br>フォームにご入力いただくと、PDFをメールでお届けします。</p>
+
+    <form>
+      <div class="form-group">
+        <label for="name">お名前 <span class="req">必須</span></label>
+        <input type="text" id="name" name="name" placeholder="例）山田 花子" required>
+      </div>
+      <div class="form-group">
+        <label for="company">会社名 <span class="req">必須</span></label>
+        <input type="text" id="company" name="company" placeholder="例）株式会社〇〇" required>
+      </div>
+      <div class="form-group">
+        <label for="email">メールアドレス <span class="req">必須</span></label>
+        <input type="email" id="email" name="email" placeholder="例）hanako@example.com" required>
+      </div>
+      <button type="submit" class="submit-btn">無料でダウンロードする</button>
+      <p class="form-note">
+        送信いただいた情報は、資料送付および関連サービスのご案内のみに使用します。<br>
+        第三者への提供は行いません。
+      </p>
+    </form>
+  </div>
+</section>
+
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <p>© 塚田農場プラス　All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
